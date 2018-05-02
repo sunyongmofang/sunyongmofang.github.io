@@ -1,6 +1,9 @@
-# Github学习记录
-
-[TOC]
+---
+layout: post
+title:  "Github学习记录"
+date:   2018-03-29 12:34:17 +0800
+categories: github
+---
 
 ## 常用命令
 
@@ -25,3 +28,6 @@ git commit -m "annotation"
 ```
 git push origin local:remote
 ```
+
+
+
