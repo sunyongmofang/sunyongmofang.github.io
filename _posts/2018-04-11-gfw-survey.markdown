@@ -1,4 +1,9 @@
-# gfw调研
+---
+layout: post
+title:  "gfw调研"
+date:   2018-04-26 10:12:17 +0800
+---
+
 
 - [shadowsocks](https://github.com/shadowsocks/shadowsocks-libev)
 - [kcptun](https://github.com/xtaci/kcptun/issues/137)
