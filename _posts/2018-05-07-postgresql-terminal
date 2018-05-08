@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "postgresql数据库命令行使用教程"
+date:   2018-04-11 10:12:17 +0800
+---
+
+登录命令
+psql -U 用户名 -d 数据仓库名
+
