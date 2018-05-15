@@ -26,3 +26,9 @@ tablebase为当前数据库名，=#或=>代表是否为root权限
 \df 查看当前数据库中的存储过程
 \sf function(argv...) 查看存储过程详细信息，参数为存储过程名，方法重载时应指明参数列表
 ```
+
+添加file_fdw模块，并创建服务
+```
+create extension file_fdw;
+create server pg_file_server foreign data wrapper file_fdw;
+```

@@ -26,6 +26,6 @@ def add(a, b):
 
 查看[Jekyll文档][jekyll-docs], 了解更多关于Jekyll的信息。所有bug和特征请查看[Jekyll’s GitHub repo][jekyll-gh]. 如果有问题，请在这里提问[Jekyll Talk][jekyll-talk].
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-docs]: https://www.jekyll.com.cn/
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
