@@ -2,7 +2,7 @@
 layout: post
 title:  "Github学习记录"
 date:   2018-03-29 12:34:17 +0800
-categories: github test
+categories: git
 ---
 
 ## 常用命令

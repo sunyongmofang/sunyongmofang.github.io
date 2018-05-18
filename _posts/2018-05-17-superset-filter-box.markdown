@@ -2,7 +2,7 @@
 layout: post
 title:  "superset filter_box学习"
 date:   2018-05-17 09:18:17 +0800
-categories: test filter
+categories: superset
 ---
 
 # 一、如何让切片不受filter_box组件控制

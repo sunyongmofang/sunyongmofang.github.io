@@ -2,6 +2,7 @@
 layout: post
 title:  "postgresql数据库命令行使用教程"
 date:   2018-05-07 17:12:17 +0800
+categories: postgresql
 ---
 
 登录命令

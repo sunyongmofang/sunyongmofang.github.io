@@ -2,6 +2,7 @@
 layout: post
 title:  "superset安装部署文档"
 date:   2018-05-15 09:20:17 +0800
+categories: superset
 ---
 
 
