@@ -8,7 +8,9 @@ categories: superset
 
 # 一、修改相关文件
 
-图片: https://images-cdn.shimo.im/JmEGEwI1HtIZwMt0/屏幕快照_2018_03_13_13.23.13.png
+图片: 
+
+![superset目录树](images/superset_tree.png)
 
 # 二、新增代码及其注释
 
@@ -85,7 +87,11 @@ python setup.py install
 
 1.显示效果
 
-图片: https://images-cdn.shimo.im/AImFE2TxJMIBV17n/屏幕快照_2018_03_13_13.41.18.png在visTypes.js文件中添加了Code标签的选项的组件会有code选项，在其中可以直接编写sql语句
+图片: 
+
+![superset新增样式](images/superset_code_test.png)
+
+在visTypes.js文件中添加了Code标签的选项的组件会有code选项，在其中可以直接编写sql语句
 
 2.使用方法
 
