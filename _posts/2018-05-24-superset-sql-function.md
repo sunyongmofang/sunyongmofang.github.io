@@ -10,7 +10,7 @@ categories: superset
 
 图片: 
 
-![superset目录树](images/superset_tree.png)
+![superset目录树](http://git.aiou.xyz/images/superset_tree.png)
 
 # 二、新增代码及其注释
 
@@ -89,7 +89,7 @@ python setup.py install
 
 图片: 
 
-![superset新增样式](images/superset_code_test.png)
+![superset新增样式](http://git.aiou.xyz/images/superset_code_test.png)
 
 在visTypes.js文件中添加了Code标签的选项的组件会有code选项，在其中可以直接编写sql语句
 
