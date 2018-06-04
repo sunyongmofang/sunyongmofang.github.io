@@ -14,6 +14,12 @@ categories: git
 git clone https://github.com/username/program.git
 ```
 
+- 查看git状态
+
+```
+git status
+```
+
 - 修改文件后到操作
   - 添加带git仓库
   - 提交文件到git仓库
