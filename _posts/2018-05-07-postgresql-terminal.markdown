@@ -34,3 +34,9 @@ tablebase为当前数据库名，=#或=>代表是否为root权限
 create extension file_fdw;
 create server pg_file_server foreign data wrapper file_fdw;
 ```
+
+创建用户和密码
+```
+create user firstlevel with password 'firstlevel';
+create database level_data owner firstlevel;
+```
