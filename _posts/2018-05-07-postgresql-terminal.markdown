@@ -15,7 +15,7 @@ psql -U 用户名 -d 数据仓库名
 或
 `tablebase=>`
 tablebase为当前数据库名，=#或=>代表是否为root权限
-在此模式下可以直接编写sql语句和简表语句等
+在此模式下可以直接编写sql语句和建表语句等
 
 命令行常用操作如下：
 ```
@@ -35,8 +35,20 @@ create extension file_fdw;
 create server pg_file_server foreign data wrapper file_fdw;
 ```
 
-创建用户和密码
+创建database、用户和密码
 ```
 create user firstlevel with password 'firstlevel';
 create database level_data owner firstlevel;
 ```
+
+创建表
+```
+create table table_name(column_name data_type,...);
+```
+table_name和column_name为实际表名和列名，data_type为实际数据类型，最后一列的数据类型后无“,”
+
+创建索引
+```
+create index index_name on table_name using index_type (column_name,...);
+```
+index_name和table_name为实际索引名和表名，index_type为实际索引类型，column_name为要建立索引的列名，最后一个列名后无“,”

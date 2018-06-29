@@ -13,7 +13,7 @@ from impala.dbapi import connect
 
 def execute_sql(sql):
     results = None
-    with connect(host='10.8.8.21', port=10015, database='aws', auth_mechanism='PLAIN') as conn:
+    with connect(host='110.18.18.121', port=10015, database='aws', auth_mechanism='PLAIN') as conn:
         with conn.cursor() as cursor:
             cursor.execute(sql)
             results = cursor.fetchall()
