@@ -42,11 +42,17 @@ $ ss-server \
 {% endhighlight %}
 
 参数注解：
+
 -s 指定对外本机服务地址，通常为0.0.0.0(0.0.0.0指本机完全对外暴露)
+
 -p 绑定服务端的端口号
+
 -l 指定客户端的端口号
+
 -k 设置ss服务密码
+
 -m 指定加密方式，支持加密方式如下：
+
 ```
 aes-128-gcm, aes-192-gcm, aes-256-gcm,
 aes-128-cfb, aes-192-cfb, aes-256-cfb,
@@ -57,9 +63,13 @@ chacha20-ietf-poly1305,
 xchacha20-ietf-poly1305,
 salsa20, chacha20 , rc4-md5, chacha20-ietf
 ```
+
 -f 保存进程号的文件地址，使用此参数ss会以守护进程的方式启动
+
 -t 设置超时时间
+
 -u 支持udp（如果玩海外游戏就加上，-u后面不用加任何参数）
+
 
 # 四、ss客户端下载（GUI）
 
