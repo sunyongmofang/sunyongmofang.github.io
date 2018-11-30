@@ -35,5 +35,22 @@ git commit -m "annotation"
 git push origin local:remote
 ```
 
+- 查看所有分支并判断坐在分支
 
+```
+git branch
+```
+
+- 创建新分支
+
+注意无论在那个分支上修改代码都要commit，否在在切换时代码会自动合并到被切换的分支
+```
+git checkout -b new_branch
+```
+
+- 合并分支代码到主线
+
+```
+git merge --no-ff new_branch
+```
 
