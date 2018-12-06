@@ -52,3 +52,10 @@ table_name和column_name为实际表名和列名，data_type为实际数据类�
 create index index_name on table_name using index_type (column_name,...);
 ```
 index_name和table_name为实际索引名和表名，index_type为实际索引类型，column_name为要建立索引的列名，最后一个列名后无“,”
+
+在某个表中添加新列
+
+```
+ALTER table table_name add COLUMN column_name data_type default default_value;
+```
+default与后面的值可以不添加
