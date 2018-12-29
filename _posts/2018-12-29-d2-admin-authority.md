@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "d2-admin添加简单的权限控制"
-date:   2018-12-04 14:36:58 +0800
+date:   2018-12-29 14:36:58 +0800
 categories: d2-admin
 
 ---
