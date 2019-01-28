@@ -15,7 +15,7 @@ categories: d2-admin
 const auth = {}
 
 /**
- * @description 判断 value 是否在 array 中
+ * @description 判断value是否在array中 复杂度为O(n)
  * @param {String} value
  * @param {Array} array
  */
@@ -50,6 +50,42 @@ auth.merge = function (menu, auths) {
   return newMenu
 }
 
+/**
+ * @description 获取所有权限
+ * @param {Array} menu cookie name
+ * @param {Array} auths cookie value
+ */
+auth.getAuths = function (routes) {
+  let newAuths = []
+  for (let i in routes) {
+    let tmpNode = Object.assign({}, routes[i])
+    if (tmpNode.meta && tmpNode.meta.name) {
+      if (tmpNode.children) {
+        let tmpChildren = this.getAuths(tmpNode.children)
+        newAuths = [ ...newAuths, ...tmpChildren ]
+      }
+      newAuths.push(tmpNode.meta.name)
+    }
+  }
+  let uniq = new Set(newAuths)
+  return [ ...uniq ]
+}
+
+auth.auth2Name = function (auths, routes) {
+  let names = []
+  for (let i in routes) {
+    let tmpNode = Object.assign({}, routes[i])
+    if (tmpNode.meta && this.includes(tmpNode.meta.name, auths)) {
+      if (tmpNode.children) {
+        let tmpChildren = this.auth2Name(auths, tmpNode.children)
+        names = [ ...names, ...tmpChildren ]
+      }
+      names.push(tmpNode.name)
+    }
+  }
+  return names
+}
+
 export default auth
 
 ```
@@ -64,37 +100,22 @@ export default auth
 util.cookies.set('auths', ['public', 'test'].join(','))
 ```
 
-- 3.将src/menu/header.js中的菜单对象保存到header变量中（header请自行使用声明），添加如下代码
+- 3.在src/layout/header-aside/components/menu-header/index.vue和src/layout/header-aside/components/menu-side/index.vue导入util并修改如下代码
 
 ```
-// 如下两行代码添加到src/menu/header.js文件到最上方
+修改前：<template v-for="(menu, menuIndex) in header">
+修改后：<template v-for="(menu, menuIndex) in headerShow">
+
+//导入util
 import util from '@/libs/util.js'
 
-let auths = util.cookies.get('auths', '').split(',')
-
-// 导出动作放在文件到最后，其中header变量为菜单对象（原始文件中导出对象为header）
-export default util.auth.merge(header, auths)
-```
-
-- 4.在src/router/routes.js文件中修改如下代码
-
-```
-// 在meta变量声明处的上方添加如下两行代码
-import util from '@/libs/util.js'
-
-let auths = util.cookies.get('auths', '').split(',')
-
-
-// 结尾处的两处导出动作改动如下（注意是“改动”）
-export const frameInRoutes = util.auth.merge(frameIn, auths)
-
-export default [
-  ...util.auth.merge(frameIn, auths),
-  ...frameOut,
-  ...errorPage
-]
+//在computed属性中添加如下方法
+headerShow () {
+  let auths = util.cookies.get('auths', '').split(',')
+  return util.auth.merge(this.header, auths)
+}
 ```
 
 # 三、具体使用方法
 
-在菜单对象（在src/menu/header.js中）和frameIn路由对象（在src/router/routes.js中）的元素和每个children属性的每个元素中添加`auth`，`auth`属性值如果为public或test字符串（仅在本次测试中），则对应的菜单就可以正常展现，路由没有权限的则会抛出404
+在菜单对象（在src/menu/header.js中）的元素和每个children属性的每个元素中添加`auth`，`auth`属性值如果为public或test字符串（仅在本次测试中），则对应的菜单就可以正常展现，路由没有权限的则会抛出404，在路由中的meta属性中添加`auth`属性，`auth`属性值如果为public或test字符串即可正常展现访问该路由
