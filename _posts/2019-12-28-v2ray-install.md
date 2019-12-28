@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "vim常用操作"
+title:  "ProjectV安装与配置"
 date:   2019-12-28 13:55:17 +0800
 categories: gfw 
 ---
